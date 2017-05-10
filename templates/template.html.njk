@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="demo/css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="demo/css/style.css">
 	<link rel="shortcut icon" href="favicon.ico">
 	<title>{{fontName}} Web Font</title>
 </head>
@@ -19,8 +19,8 @@
 			<ul>
                 {% for glyph in glyphs %}
                     <li>
-                        <i class="nc-icon {{glyph.name}}"></i>
-                        <p>{{glyph.name}}</p>
+                        <i class="nc-icon {{ className }}-{{ glyph.name }}"></i>
+                        <p>{{ className }}-{{ glyph.name }}</p>
                     </li>
                 {% endfor %}
 				<!-- list of icons here with the proper class-->
