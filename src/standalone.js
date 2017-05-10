@@ -247,14 +247,24 @@ export default function (initialOptions) {
                                 (buildInTemplate) => path.extname(buildInTemplate.replace('.njk', ''))
                             );
 
-                            let templateFilePath = options.template;
+                            if(Array.isArray(options.template)){
+                                let templatesArray = options.template;
+                            }else {
+                                let templateFilePath = options.template;
+                            }
 
                             if (supportedExtensions.indexOf(`.${options.template}`) !== -1) {
                                 result.usedBuildInStylesTemplate = true;
 
                                 nunjucks.configure(path.join(__dirname, '../'));
 
-                                templateFilePath = `${buildInTemplateDirectory}/template.${options.template}.njk`;
+                                if(templateFilePath){
+                                    templateFilePath = `${buildInTemplateDirectory}/template.${options.template}.njk`;
+                                }else{
+                                    templatesArray = templatesArray.map((item) => {
+                                        `${buildInTemplateDirectory}/template.${item}.njk`
+                                    });
+                                }
                             } else {
                                 templateFilePath = path.resolve(templateFilePath);
                             }
@@ -283,8 +293,14 @@ export default function (initialOptions) {
                                 }
                             );
 
-                            result.styles = nunjucks.render(templateFilePath, nunjucksOptions);
-
+                            if(templatesArray){
+                                templatesArray.forEach( (item, index)=> {
+                                    let title = options.template[index];
+                                    result[title] = nunjucks.render(item, nunjucksOptions);
+                                });
+                            }else{
+                                result.styles = nunjucks.render(templateFilePath, nunjucksOptions);
+                            }
                             return result;
                         });
                 })
