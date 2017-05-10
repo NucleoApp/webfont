@@ -243,30 +243,26 @@ export default function (initialOptions) {
 
                     return globby(`${buildInTemplateDirectory}/**/*`)
                         .then((buildInTemplates) => {
+                            let templatesArray;
                             const supportedExtensions = buildInTemplates.map(
                                 (buildInTemplate) => path.extname(buildInTemplate.replace('.njk', ''))
                             );
 
                             if(Array.isArray(options.template)){
-                                let templatesArray = options.template;
-                            }else {
-                                let templateFilePath = options.template;
-                            }
-
-                            if (supportedExtensions.indexOf(`.${options.template}`) !== -1) {
-                                result.usedBuildInStylesTemplate = true;
-
-                                nunjucks.configure(path.join(__dirname, '../'));
-
-                                if(templateFilePath){
-                                    templateFilePath = `${buildInTemplateDirectory}/template.${options.template}.njk`;
-                                }else{
-                                    templatesArray = templatesArray.map((item) => {
-                                        `${buildInTemplateDirectory}/template.${item}.njk`
-                                    });
-                                }
+                                templatesArray = options.template.slice();
+                                templatesArray = templatesArray.map((item) => {
+                                    return (`${buildInTemplateDirectory}/template.${item}.njk`)
+                                });
                             } else {
-                                templateFilePath = path.resolve(templateFilePath);
+                                let templateFilePath = options.template;
+                                if (supportedExtensions.indexOf(`.${options.template}`) !== -1) {
+                                    result.usedBuildInStylesTemplate = true;
+
+                                    nunjucks.configure(path.join(__dirname, '../'));
+                                    templateFilePath = `${buildInTemplateDirectory}/template.${options.template}.njk`;
+                                } else {
+                                    templateFilePath = path.resolve(templateFilePath);
+                                }
                             }
 
                             const nunjucksOptions = merge(
