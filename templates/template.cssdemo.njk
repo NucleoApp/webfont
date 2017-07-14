@@ -154,7 +154,7 @@ ul input {
 icons
 
 -------------------------------- */
-.nc-icon {
+.{{ className }}-icon {
   display: inline-block;
   font: normal normal normal 32px/1 '{{fontName}}';
   speak: none;
@@ -167,12 +167,12 @@ icons
 /*------------------------
   spinning icons
 -------------------------*/
-.nc-icon.spin {
-  -webkit-animation: nc-icon-spin 2s infinite linear;
-  -moz-animation: nc-icon-spin 2s infinite linear;
-  animation: nc-icon-spin 2s infinite linear;
+.{{ className }}-icon.spin {
+  -webkit-animation: {{ className }}-icon-spin 2s infinite linear;
+  -moz-animation: {{ className }}-icon-spin 2s infinite linear;
+  animation: {{ className }}-icon-spin 2s infinite linear;
 }
-@-webkit-keyframes nc-icon-spin {
+@-webkit-keyframes {{ className }}-icon-spin {
   0% {
     -webkit-transform: rotate(0deg);
   }
@@ -180,7 +180,7 @@ icons
     -webkit-transform: rotate(360deg);
   }
 }
-@-moz-keyframes nc-icon-spin {
+@-moz-keyframes {{ className }}-icon-spin {
   0% {
     -moz-transform: rotate(0deg);
   }
@@ -188,7 +188,7 @@ icons
     -moz-transform: rotate(360deg);
   }
 }
-@keyframes nc-icon-spin {
+@keyframes {{ className }}-icon-spin {
   0% {
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
