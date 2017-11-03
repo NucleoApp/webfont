@@ -296,7 +296,7 @@ function svgIcons2svgFontFn(glyphsData, options) {
     var result = '';
 
     return new Promise(function (resolve, reject) {
-        var fontStream = (0, _svgicons2svgfont2.default)({
+        var fontStream = new _svgicons2svgfont2.default({
             ascent: options.ascent,
             centerHorizontally: options.centerHorizontally,
             descent: options.descent,
