@@ -73,7 +73,7 @@ function svgIcons2svgFontFn(glyphsData, options) {
     let result = '';
 
     return new Promise((resolve, reject) => {
-        const fontStream = svgicons2svgfont({
+        const fontStream = new svgicons2svgfont({
             ascent: options.ascent,
             centerHorizontally: options.centerHorizontally,
             descent: options.descent,
