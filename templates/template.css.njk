@@ -161,10 +161,9 @@ License - nucleoapp.com/license/
 /*------------------------
 	font icons
 -------------------------*/
+/* all icon font classes list here */
 {% for glyph in glyphs%}
 .{{ className }}-{{ glyph.name }}::before {
     content: "\{{ glyph.unicode[0].charCodeAt(0).toString(16) }}";
 }
 {% endfor %}
-
-/* all icon font classes list here */
