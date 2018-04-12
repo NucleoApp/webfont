@@ -19,7 +19,7 @@
 			<ul>
                 {% for glyph in glyphs %}
                     <li>
-                        <i class="{{ className }}-icon {{ className }}-{{ glyph.name }}"></i>
+                        <i class="{{classBase}} {{ className }}-{{ glyph.name }}"></i>
                         <p>{{ className }}-{{ glyph.name }}</p>
                     </li>
                 {% endfor %}

@@ -2,7 +2,7 @@
 	font icons
 -------------------------*/
 {% for glyph in glyphs%}
-.{{ className }}-icon.{{ className }}-{{ glyph.name }}:before {
+.{{classBase}}.{{ className }}-{{ glyph.name }}:before {
   content: "\{{ glyph.unicode[0].charCodeAt(0).toString(16) }}";
 }
 {% endfor %}

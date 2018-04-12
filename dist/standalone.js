@@ -18,6 +18,7 @@ exports.default = function (initialOptions) {
         cssTemplateClassName: null,
         cssTemplateFontName: null,
         cssTemplateFontPath: './',
+        classBase: null,
         descent: 0,
         fixedWidth: false,
         fontHeight: null,
@@ -136,6 +137,7 @@ exports.default = function (initialOptions) {
                     })
                 }, options, {
                     className: options.cssTemplateClassName ? options.cssTemplateClassName : options.fontName,
+                    classBase: options.classBase,
                     fontName: options.cssTemplateFontName ? options.cssTemplateFontName : options.fontName,
                     fontPath: options.cssTemplateFontPath
                 });
