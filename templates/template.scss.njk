@@ -8,6 +8,6 @@
 ${{ className }}-{{ glyph.name }}: unicode({{ glyph.unicode[0].charCodeAt(0).toString(16) }});{% endfor %}
 {% for glyph in glyphs%}
 .{{classBase}}.{{ className }}-{{ glyph.name }}:before {
-  content: "\{{ glyph.unicode[0].charCodeAt(0).toString(16) }}";
+  content: ${{ className }}-{{ glyph.name }};
 }
 {% endfor %}
