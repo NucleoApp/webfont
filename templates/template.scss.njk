@@ -7,7 +7,7 @@
 {% for glyph in glyphs%}
 ${{ className }}-{{ glyph.name }}: unicode({{ glyph.unicode[0].charCodeAt(0).toString(16) }});{% endfor %}
 {% for glyph in glyphs%}
-.{{classBase}}.{{ className }}-{{ glyph.name }}:before {
+.{{classBase}}.{{ className }}-{{ glyph.name }}::before {
   content: ${{ className }}-{{ glyph.name }};
 }
 {% endfor %}
