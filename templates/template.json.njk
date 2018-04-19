@@ -1,0 +1,1 @@
+{ {% for glyph in glyphs %}"{{ className }}-{{ glyph.name }}": {{ glyph.unicode[0].charCodeAt(0) }}{% if loop.last %}{% else %}, {% endif %}{% endfor %}}
