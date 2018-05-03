@@ -150,6 +150,7 @@ export default function (initialOptions) {
         cssTemplateFontName: null,
         cssTemplateFontPath: './',
         classBase: null,
+        encode: false,
         descent: 0,
         fixedWidth: false,
         fontHeight: null,
@@ -240,6 +241,17 @@ export default function (initialOptions) {
                         return result;
                     }
 
+                    var encodedFont = [];
+                    if (options.encode) {
+                        encodedFont['eot'] = result.eot.toString('base64')
+                        encodedFont['woff'] = result.woff.toString('base64')
+                        encodedFont['ttf'] = result.ttf.toString('base64')
+                    } else {
+                        encodedFont['eot'] = ''
+                        encodedFont['woff'] = ''
+                        encodedFont['ttf'] = ''
+                    }
+
                     const buildInTemplateDirectory = path.resolve(__dirname, '../templates');
 
                     return globby(`${buildInTemplateDirectory}/**/*`)
@@ -284,6 +296,10 @@ export default function (initialOptions) {
                                         ? options.cssTemplateClassName
                                         : options.fontName,
                                     classBase: options.classBase,
+                                    encode: options.encode,
+                                    base64opentype: encodedFont['eot'],
+                                    base64woff: encodedFont['woff'],
+                                    base64ttf: encodedFont['ttf'],
                                     fontName: options.cssTemplateFontName
                                         ? options.cssTemplateFontName
                                         : options.fontName,
