@@ -51,76 +51,66 @@ Main components
 -------------------------------- */
 header {
   text-align: center;
-  padding: 100px 0 0;
+  padding: 80px 0 48px;
 }
+
 header h1 {
   font-size: 2.8rem;
 }
+
 header p {
   font-size: 1.4rem;
   margin-top: 1em;
 }
+
 header a:hover {
   text-decoration: underline;
 }
 
-section {
-  width: 90%;
-  max-width: 1200px;
-  margin: 50px auto;
-}
-section h2 {
-  border-bottom: 1px solid #e2e2e2;
-  padding: 0 0 1em .2em;
-  margin-bottom: 1em;
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-ul::after {
-  clear: both;
-  content: "";
-  display: table;
-}
 ul li {
-  width: 25%;
-  float: left;
-  padding: 16px 0;
-  text-align: center;
   border-radius: .25em;
-  -webkit-transition: background 0.2s;
-  -moz-transition: background 0.2s;
   transition: background 0.2s;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   overflow: hidden;
+  text-align: center;
+  padding: 1em;
 }
+
 ul li:hover {
-  background: #f4f4f4;
+  background: #f8f8f8;
 }
+
 ul p, ul em, ul input {
-  display: inline-block;
-  font-size: 1rem;
-  color: #999999;
+  display: block;
+  font-size: 1.1rem;
+  color: rgba(0,0,0,0.6);
   -webkit-user-select: auto;
   -moz-user-select: auto;
   -ms-user-select: auto;
   user-select: auto;
   white-space: nowrap;
-  width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   cursor: pointer;
+  max-width: 11rem;
 }
 
 ul p {
-  padding: 10px;
-  margin-top: 10px;
+  padding: 10px 0;
 }
 
 ul p::selection, ul em::selection {
   background: #608CEE;
-  color: #efefef;
+  color: #fff;
 }
 
 ul em {
@@ -140,20 +130,6 @@ ul input {
   border: none;
   box-shadow: none;
   outline: none;
-}
-
-@media only screen and (min-width: 768px) {
-  ul li {
-    width: 20%;
-    float: left;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  ul li {
-    width: 12.5%;
-    float: left;
-    padding: 32px 0;
-  }
 }
 
 /* --------------------------------
