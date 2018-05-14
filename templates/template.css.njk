@@ -23,8 +23,7 @@ Generated using nucleoapp.com
 -------------------------*/
 .{{classBase}} {
   display: inline-block;
-  font: normal normal normal 14px/1 '{{fontName}}';
-  font-size: inherit;
+  font: normal normal normal 1em/1 '{{fontName}}';
   speak: none;
   text-transform: none;
   /* Better Font Rendering */
@@ -34,26 +33,29 @@ Generated using nucleoapp.com
 /*------------------------
   change icon size
 -------------------------*/
-.{{classBase}}.lg {
-  font-size: 1.33333333em;
-  vertical-align: -16%;
+/* relative units */
+.{{classBase}}-sm {
+  font-size: 0.8em;
 }
-.{{classBase}}.x2 {
-  font-size: 2em;
+.{{classBase}}-lg {
+  font-size: 1.2em;
 }
-.{{classBase}}.x3 {
-  font-size: 3em;
+/* absolute units */
+.{{classBase}}-16 {
+  font-size: 16px;
+}
+.{{classBase}}-32 {
+  font-size: 32px;
 }
 /*----------------------------------
   add a square/circle background
 -----------------------------------*/
-.{{classBase}}.square,
-.{{classBase}}.circle {
-  padding: 0.33333333em;
-  vertical-align: -16%;
+.{{classBase}}-bg-square,
+.{{classBase}}-bg-circle {
+  padding: 0.35em;
   background-color: #eee;
 }
-.{{classBase}}.circle {
+.{{classBase}}-bg-circle {
   border-radius: 50%;
 }
 /*------------------------
@@ -61,31 +63,21 @@ Generated using nucleoapp.com
 -------------------------*/
 .{{classBase}}-ul {
   padding-left: 0;
-  margin-left: 2.14285714em;
   list-style-type: none;
 }
 .{{classBase}}-ul > li {
-  position: relative;
+  display: flex;
+  align-items: flex-start;
+  line-height: 1.4;
 }
 .{{classBase}}-ul > li > .{{classBase}} {
-  position: absolute;
-  left: -1.57142857em;
-  top: 0.14285714em;
-  text-align: center;
-}
-.{{classBase}}-ul > li > .{{classBase}}.lg {
-  top: 0;
-  left: -1.35714286em;
-}
-.{{classBase}}-ul > li > .{{classBase}}.circle,
-.{{classBase}}-ul > li > .{{classBase}}.square {
-  top: -0.19047619em;
-  left: -1.9047619em;
+  margin-right: 0.4em;
+  line-height: inherit;
 }
 /*------------------------
   spinning icons
 -------------------------*/
-.{{classBase}}.spin {
+.{{classBase}}-is-spinning {
   -webkit-animation: {{classBase}}-spin 2s infinite linear;
   -moz-animation: {{classBase}}-spin 2s infinite linear;
   animation: {{classBase}}-spin 2s infinite linear;
@@ -125,7 +117,7 @@ Generated using nucleoapp.com
 /*------------------------
   rotated/flipped icons
 -------------------------*/
-.{{classBase}}.rotate-90 {
+.{{classBase}}-rotate-90 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
@@ -133,7 +125,7 @@ Generated using nucleoapp.com
   -o-transform: rotate(90deg);
   transform: rotate(90deg);
 }
-.{{classBase}}.rotate-180 {
+.{{classBase}}-rotate-180 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
@@ -141,7 +133,7 @@ Generated using nucleoapp.com
   -o-transform: rotate(180deg);
   transform: rotate(180deg);
 }
-.{{classBase}}.rotate-270 {
+.{{classBase}}-rotate-270 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
   -webkit-transform: rotate(270deg);
   -moz-transform: rotate(270deg);
@@ -149,7 +141,7 @@ Generated using nucleoapp.com
   -o-transform: rotate(270deg);
   transform: rotate(270deg);
 }
-.{{classBase}}.flip-y {
+.{{classBase}}-flip-y {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
   -webkit-transform: scale(-1, 1);
   -moz-transform: scale(-1, 1);
@@ -157,7 +149,7 @@ Generated using nucleoapp.com
   -o-transform: scale(-1, 1);
   transform: scale(-1, 1);
 }
-.{{classBase}}.flip-x {
+.{{classBase}}-flip-x {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
   -webkit-transform: scale(1, -1);
   -moz-transform: scale(1, -1);
