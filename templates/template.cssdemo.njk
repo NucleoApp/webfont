@@ -76,9 +76,6 @@ ul {
 ul li {
   border-radius: .25em;
   transition: background 0.2s;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   overflow: hidden;
   text-align: center;
@@ -109,6 +106,11 @@ ul p {
 }
 
 ul p::selection, ul em::selection {
+  background: #608CEE;
+  color: #fff;
+}
+
+ul p::-moz-selection, ul em::-moz-selection {
   background: #608CEE;
   color: #fff;
 }
