@@ -88,20 +88,18 @@ Main components
 -------------------------------- */
 header {
   text-align: center;
-  padding: 80px 0 48px;
+  margin: 3em auto;
 }
 
 header h1 {
-  font-size: 2.8rem;
+  font-size: 2.6rem;
+  font-weight: 600;
 }
 
 header p {
-  font-size: 1.4rem;
+  font-size: 1rem;
   margin-top: 1em;
-}
-
-header a:hover {
-  text-decoration: underline;
+  color: hsla(0, 0%, 0%, 0.5);
 }
 
 ul {
@@ -111,8 +109,8 @@ ul {
 }
 
 ul li {
-  border-radius: .25em;
-  transition: background 0.2s;
+  border-radius: .4em;
+  transition: background-color .2s;
   user-select: none;
   overflow: hidden;
   text-align: center;
@@ -120,40 +118,37 @@ ul li {
 }
 
 ul li:hover {
-  background: #f8f8f8;
+  background: hsla(0, 0%, 0%, 0.05);
 }
 
 ul p, ul em, ul input {
   display: block;
-  font-size: 1.1rem;
-  color: rgba(0,0,0,0.6);
-  -webkit-user-select: auto;
-  -moz-user-select: auto;
-  -ms-user-select: auto;
+  font-size: 0.75rem;
+  color: hsla(0, 0%, 0%, 0.5);
   user-select: auto;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   cursor: pointer;
-  max-width: 11rem;
+  max-width: 6rem;
 }
 
 ul p {
-  padding: 10px 0;
+  padding: 8px 0 4px;
 }
 
 ul p::selection, ul em::selection {
-  background: #608CEE;
+  background: hsl(230, 93%, 66%);
   color: #fff;
 }
 
 ul p::-moz-selection, ul em::-moz-selection {
-  background: #608CEE;
+  background: hsl(230, 93%, 66%);
   color: #fff;
 }
 
 ul em {
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
 ul em::before {
